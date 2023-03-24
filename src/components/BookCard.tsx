@@ -52,7 +52,7 @@ const BookCard = ({ _id }: { _id: string }) => {
             onClick={() => {
               toggleLocalStorage(currentBook._id, "cart");
               dispatch(
-                BooksSlice.actions.updateFavourites(
+                BooksSlice.actions.updateCart(
                   JSON.parse(localStorage.getItem("cart") || "[]")
                 )
               );
