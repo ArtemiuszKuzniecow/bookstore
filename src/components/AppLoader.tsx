@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadBooksData } from "../store/books/actions";
 import { getFavouites, getIsLoading } from "../store/books/selectors";
 import { AppDispatch } from "../store/rootReducer";
+import Loader from "./Loader";
 
 const AppLoader = ({
   children,
@@ -16,7 +17,7 @@ const AppLoader = ({
     dispatch(loadBooksData());
   }, []);
 
-  return <>{isLoading ? <p>Loading</p> : children}</>;
+  return <>{isLoading ? <Loader /> : children}</>;
 };
 
 export default AppLoader;
